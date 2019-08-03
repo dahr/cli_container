@@ -75,7 +75,7 @@ RUN echo "Installing Helm" \
 
 # Install PKS CLI
 RUN echo "Installing PKS CLI" \
-  COPY pks-linux-amd64-1.4.0-build.230 . \
+  && wget --no-check-certificate "https://www.dropbox.com/s/t3jk7sf426ifj5a/pks-linux-amd64-1.4.0-build.230" \
   && mv pks-linux-amd64-1.4.0-build.230 /usr/local/bin/pks \
   && chmod +x ./usr/local/bin/pks \
   && which pks \
@@ -84,5 +84,3 @@ RUN echo "Installing PKS CLI" \
 # Create Aliases
 RUN echo "alias k=kubectl" > /root/.profile
 
-# Leave Container Running for SSH Access - SHOULD REMOVE
-ENTRYPOINT ["tail", "-f", "/dev/null"]
