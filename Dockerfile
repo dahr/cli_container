@@ -3,7 +3,7 @@ MAINTAINER "Dave Ahr <dahr@vmware.com>"
 
 # Install libraries
 RUN echo "Installing Libraries" \
-    && apk add --update git bash openssh python3 curl findutils jq wget bash-completion
+    && apk add --update git bash openssh python3 curl findutils jq wget bash-completion openssh-server
 RUN echo "Installing Ansible Libs" \
     && apk add --update sudo python py-pip openssl ca-certificates \
     && apk add --update --virtual build-dependencies python-dev libffi-dev openssl-dev build-base
