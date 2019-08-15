@@ -8,7 +8,8 @@ RUN echo "Installing Ansible Libs" \
     && apk add --update sudo python py-pip openssl ca-certificates \
     && apk add --update --virtual build-dependencies python-dev libffi-dev openssl-dev build-base
 RUN echo "Installing AWS Libs" \
-    && apk add --update groff less
+    && apk add --update groff less \
+    && rm -rf /tmp/* /var/cache/apk/*
 
 ENV TERRAFORM_VERSION=0.12.6
 ENV PACKER_VERSION=1.4.3
@@ -76,7 +77,7 @@ RUN echo "Installing Helm" \
 
 # Install PKS CLI
 RUN echo "Installing PKS CLI" \
-  && wget --no-check-certificate "https://www.dropbox.com/s/t3jk7sf426ifj5a/pks-linux-amd64-1.4.0-build.230" \
+  && wget -q --no-check-certificate "https://www.dropbox.com/s/t3jk7sf426ifj5a/pks-linux-amd64-1.4.0-build.230" \
   && mv pks-linux-amd64-1.4.0-build.230 /usr/local/bin/pks \
   && chmod +x ./usr/local/bin/pks \
   && which pks \
