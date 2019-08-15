@@ -99,3 +99,6 @@ RUN echo "Installing uaac" \
   
 # Create Aliases
 RUN echo "alias k=kubectl" > /root/.profile
+
+# Copy support files
+COPY bosh /root/bosh
