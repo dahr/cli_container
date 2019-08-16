@@ -98,6 +98,13 @@ RUN echo "Installing uaac" \
   && which uaac \
   && uaac --version
   
+# Install Azure CLI
+COPY azure-cli /root/azure-cli
+RUN echo "Installing Azure CLI (az)" \
+  && python /root/azure-cli/install.py \
+  && which az \
+  && az --version
+
 # Create Aliases
 RUN echo "alias k=kubectl" > /root/.profile
 
