@@ -1,0 +1,7 @@
+# Bosh Environment Variables
+# Be sure to replace the below with your specific environment information
+
+export BOSH_CLIENT=ops_manager
+export BOSH_CLIENT_SECRET=some secret
+export BOSH_CA_CERT=/var/tempest/workspaces/default/root_ca_certificate
+export BOSH_ENVIRONMENT=10.0.0.5

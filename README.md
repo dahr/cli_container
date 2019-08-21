@@ -1,2 +1,14 @@
 # cli_container
-Build a container image with built in pks and kubectl cli
+This Dockerfile will build a container image with the following utilities:
+
+- Terraform
+- Packer
+- Ansible
+- AWS CLI
+- VKE
+- kubectl
+- Istioctl
+- Helm
+- PKS CLI
+- Bosh CLI
+- UAAC
